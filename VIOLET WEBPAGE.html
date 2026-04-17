@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile</title>
+
+    <style>
+         {
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #333;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(0,0,0,0.8);
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd369;
+        }
+
+        /* CONTAINER */
+        .container {
+            width: 85%;
+            margin: 20px auto;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        h2 {
+            padding-left:5px;
+        }
+
+        /* PROFILE */
+        .profile {
+            text-align: center;
+        }
+
+
+        /* TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table th {
+            background: #764ba2;
+            color: white;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* FORM */
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #764ba2;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #5a3a8a;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+    <!-- PROFILE -->
+    <section id="about" class="profile">
+        <h2>My Profile</h2>
+        <p>Hi I'm Selwyn Ralph P. Reyes, and I am 19 years old. I enjoy spending my time doing things that make me happy and help me relax.
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2>My Skills</h2>
+        <table>
+            <tr>
+                <th>Skill</th>
+                <th>What I do</th>
+            </tr>
+            <tr>
+                <td>Online Gaming </td>
+                <td>Skilled in strategy, teamwork, and quick decision making.</td>
+            </tr>
+            <tr>
+                <td>Cooking</td>
+                <td>Can prepare different dishes and follow recipes well.</td>
+            </tr>
+            <tr>
+                <td>Communication</td>
+                <td>Able to express ideas clearly and interact with others.</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>09626868943</p>
+        <p>reyesselwynralph@gmail.com</p>
+        <form onsubmit="return validateForm()">
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="email" id="email" placeholder="Your Email">
+            <input type="text" id="Number" placeholder="Your Number">
+            <textarea id="message" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+</div>
+
+<script>
+    function toggleDark() {
+        document.body.classList.toggle("dark");
+    }
+
+    function validateForm() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+
+        if (name === "" || email === "") {
+            alert("Please fill out all fields!");
+            return false;
+        }
+
+        alert("Message sent successfully!");
+        return true;
+    }
+</script>
+
+</body>
+</html>
